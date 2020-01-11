@@ -29,7 +29,9 @@ class LearnContainerState extends State<LearnContainer>{
     // TODO: implement build
     return Container(
       child: Center(
-        child: Text('Learn',),
+        child: RaisedButton(onPressed: (){
+          Navigator.pushNamed(context, "map");
+        }, child: Text("去地图页")),
       ),
     );
   }

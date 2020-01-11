@@ -4,12 +4,14 @@ import '../global_store/state.dart';
 import '../global_store/store.dart';
 import './TabNavigator/page.dart';
 import './MainNavigator/PageCover/page.dart';
+import './MainNavigator/page_map/page.dart';
 
 Widget createApp(){
   final AbstractRoutes routes = PageRoutes(
     pages: <String, Page<Object, dynamic>>{
       "/": TabPage(),
       "cover": PageCoverPage(),
+      "map": MapPage(),
     },
     visitor: (String path, Page<Object, dynamic> page) {
       /// 只有特定的范围的 Page 才需要建立和 AppStore 的连接关系

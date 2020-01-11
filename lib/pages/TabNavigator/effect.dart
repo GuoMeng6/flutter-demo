@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' hide Action;
 import 'action.dart';
 import 'state.dart';
@@ -14,7 +15,14 @@ Effect<TabState> buildEffect() {
 void _onAction(Action action, Context<TabState> ctx) {
 }
 
-void _onInitState(Action action, Context<TabState> ctx) {
+void _onInitState(Action action, Context<TabState> ctx) async{
+  const platform = const MethodChannel('samples.flutter.io/battery');
+  try {
+    final int result = await platform.invokeMethod('getBatteryLevel');
+    print("========= result ========= $result");
+  } on PlatformException catch (e) {
+    print("=========== Failed to get battery level: '${e.message}'.");
+  }
 
 }
 
