@@ -22,11 +22,13 @@ class MainActivity: FlutterActivity() {
 
     override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         GeneratedPluginRegistrant.registerWith(flutterEngine)
-        MethodChannel(flutterEngine.dartExecutor, CHANNEL).setMethodCallHandler(MethodChannel
-                .MethodCallHandler() {
-                   methodCall: MethodCall, result: MethodChannel.Result ->
-                    Log.d("==========","========== method ======"+methodCall.method)
-                })
+        flutterEngine.getPlugins().add(com.example.flutter_demo4.FlutterPluginTestNewPlugin())
+//        flutterEngine.platformViewsController();
+//        MethodChannel(flutterEngine.dartExecutor, CHANNEL).setMethodCallHandler(MethodChannel
+//                .MethodCallHandler() {
+//                   methodCall: MethodCall, result: MethodChannel.Result ->
+//                    Log.d("==========","========== method ======"+methodCall.method)
+//                })
     }
 
 

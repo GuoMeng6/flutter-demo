@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:fish_redux/fish_redux.dart';
 
 import 'package:flutter/material.dart';
@@ -11,6 +13,8 @@ class PageCoverState implements Cloneable<PageCoverState> {
   BookDetail bookDetail;
   bool loading = false; // 是否正在请求图书详情
   List<List<Color>> colors = [[Color(0xFFD7EFFF),Color(0xFF3AAFFF)]];
+  num progress = 0;
+  ReceivePort port = ReceivePort();
 
   @override
   PageCoverState clone() {
@@ -18,7 +22,9 @@ class PageCoverState implements Cloneable<PageCoverState> {
       ..loading = loading
       ..bookDetail = bookDetail
       ..colors = colors
-      ..bookItem = bookItem;
+      ..bookItem = bookItem
+      ..progress = progress
+      ..port = port;
   }
 }
 

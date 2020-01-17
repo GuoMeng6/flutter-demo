@@ -29,9 +29,17 @@ class LearnContainerState extends State<LearnContainer>{
     // TODO: implement build
     return Container(
       child: Center(
-        child: RaisedButton(onPressed: (){
-          Navigator.pushNamed(context, "map");
-        }, child: Text("去地图页")),
+        child: Column(
+          children: <Widget>[
+            RaisedButton(onPressed: (){
+              Navigator.pushNamed(context, "map");
+            }, child: Text("去地图页")),
+            Container(height: 30),
+            RaisedButton(onPressed: (){
+              Navigator.pushNamed(context, "list");
+            }, child: Text("去list")),
+          ],
+        ),
       ),
     );
   }

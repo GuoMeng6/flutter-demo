@@ -32,6 +32,9 @@ dependencies:
   permission_handler: ^4.0.0
   toast: ^0.1.5
   amap_all_fluttify: ^0.11.0
+  path_provider: ^1.5.1
+  flutter_downloader: ^1.4.0
+  archive: 2.0.11
 
 
 dev_dependencies:

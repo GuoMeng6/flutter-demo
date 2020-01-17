@@ -30,7 +30,7 @@ class AppLoading extends StatelessWidget {
   final Offset offset;
   final bool dismissible;
   final Widget child;
-  final double progress;
+  final num progress;
 
   AppLoading({
     Key key,

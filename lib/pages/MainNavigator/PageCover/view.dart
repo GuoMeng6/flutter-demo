@@ -28,7 +28,7 @@ Widget buildView(
     ),
     body: AppLoading(
         inAsyncCall: state.loading,
-        progress: 0,
+        progress: state.progress,
         child: Container(
           color: MyColors.primary,
           child: Stack(

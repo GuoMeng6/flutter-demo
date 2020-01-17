@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:device_info/device_info.dart';
+import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:permission_handler/permission_handler.dart';
 import '../local/local-storage.dart';
@@ -47,6 +48,14 @@ class Utils {
       return true;
     }
     return false;
+  }
+
+  static getExternalStoragePath() async {
+    print("======== getExternalStorageDirectory ======== ");
+    final directory = Platform.isAndroid
+        ? await getExternalStorageDirectory()
+        : await getApplicationSupportDirectory();
+    return directory.path;
   }
 
 }

@@ -5,6 +5,8 @@ import '../global_store/store.dart';
 import './TabNavigator/page.dart';
 import './MainNavigator/PageCover/page.dart';
 import './MainNavigator/page_map/page.dart';
+import './MainNavigator/page_list/page.dart';
+import './MainNavigator/book_reading/page.dart';
 
 Widget createApp(){
   final AbstractRoutes routes = PageRoutes(
@@ -12,6 +14,8 @@ Widget createApp(){
       "/": TabPage(),
       "cover": PageCoverPage(),
       "map": MapPage(),
+      "list": ListPage(),
+      "reading": BookReadingPage(),
     },
     visitor: (String path, Page<Object, dynamic> page) {
       /// 只有特定的范围的 Page 才需要建立和 AppStore 的连接关系
