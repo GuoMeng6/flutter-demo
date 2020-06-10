@@ -4,12 +4,14 @@ import 'package:flutter_demo4/models/book_page/book_page.dart';
 class BookReadingState implements Cloneable<BookReadingState> {
   List<BookPage> data;
   String bookId;
+  int index = 0;
 
   @override
   BookReadingState clone() {
     return BookReadingState()
       ..data = data
-      ..bookId = bookId;
+      ..bookId = bookId
+      ..index = index;
   }
 }
 

@@ -35,6 +35,7 @@ dependencies:
   path_provider: ^1.5.1
   flutter_downloader: ^1.4.0
   archive: 2.0.11
+  flutter_swiper : ^1.1.6
 
 
 dev_dependencies:

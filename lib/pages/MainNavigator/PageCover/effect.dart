@@ -102,6 +102,7 @@ void _onPressRead(Action action, Context<PageCoverState> ctx) async {
 
   print(
       "========= url ========== ${bookDetail.bookHosts.bookPack}${bookDetail.book.packUrl}");
+  FlutterDownloader.registerCallback(downloadCallback);
   final taskId = await FlutterDownloader.enqueue(
     url: "${bookDetail.bookHosts.bookPack}${bookDetail.book.packUrl}",
     savedDir: path,
@@ -110,7 +111,6 @@ void _onPressRead(Action action, Context<PageCoverState> ctx) async {
     openFileFromNotification:
         true, // click on notification to open downloaded file (for Android)
   );
-  FlutterDownloader.registerCallback(downloadCallback);
 }
 
 void _onDownloadComplete(Action action, Context<PageCoverState> ctx) async {
@@ -136,10 +136,10 @@ void _onDownloadComplete(Action action, Context<PageCoverState> ctx) async {
   print("========= bookJson ========== $bookJson");
   List list = json.decode(bookJson);
   List<BookPage> list2 = list.map((item) => BookPage.fromJson(item)).toList();
-  print("========= 第一个 ======= ${list2[0].toJson()}");
   Map<String, dynamic> map = new HashMap();
   map["bookId"] = bookDetail.book.id;
   map["data"] = list2;
+//  map["boookDetail"] = bookDetail;
   ctx.dispatch(PageCoverActionCreator.onPushToBookReading(map));
 }
 

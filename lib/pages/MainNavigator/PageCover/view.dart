@@ -16,8 +16,7 @@ Widget buildView(
       width: 0,
     );
   }
-  print("=========== bookDetail ======== ${bookDetail?.book?.toJson()}");
-  print("=========== bookHosts ======== ${bookDetail?.bookHosts?.toJson()}");
+
   String imgUrl =
       "${bookDetail?.bookHosts?.bookCover}${bookDetail?.book?.cover}";
   List<String> topicArr = bookDetail.book.keywords.split("，");

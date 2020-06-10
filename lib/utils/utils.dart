@@ -7,6 +7,8 @@ import '../local/local-storage.dart';
 
 class Utils {
 
+  static String filePath = '';
+
   static getDeviceInfo() async {
     DeviceInfoPlugin deviceInfo = new DeviceInfoPlugin();
     String device = "Web|macOS|Windows";
@@ -55,6 +57,7 @@ class Utils {
     final directory = Platform.isAndroid
         ? await getExternalStorageDirectory()
         : await getApplicationSupportDirectory();
+    filePath = directory.path;
     return directory.path;
   }
 

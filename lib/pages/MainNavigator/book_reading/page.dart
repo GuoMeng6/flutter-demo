@@ -15,6 +15,7 @@ class BookReadingPage extends Page<BookReadingState, Map<String, dynamic>> {
             dependencies: Dependencies<BookReadingState>(
                 adapter: null,
                 slots: <String, Dependent<BookReadingState>>{
+                  
                 }),
             middleware: <Middleware<BookReadingState>>[
             ],);
